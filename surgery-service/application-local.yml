@@ -9,7 +9,7 @@ eureka:
 
 spring:
   application:
-    name: surgery-service
+    name: surgery-service-local
   devtools:
     restart:
       enabled: true
