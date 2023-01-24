@@ -16,4 +16,4 @@ spring:
     url: jdbc:mysql://localhost:3306/test_db
    
 
-message: "Good morning" 
+message: "very Good morning" 
