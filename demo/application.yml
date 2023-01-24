@@ -14,4 +14,6 @@ spring:
     username: root
     password: Welcome12!@
     url: jdbc:mysql://localhost:3306/test_db
+   
 
+message: "Good morning" 
