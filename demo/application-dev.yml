@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: Demo
+    name: demo
   devtools:
     restart:
       enabled: true
