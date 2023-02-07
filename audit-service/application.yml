@@ -34,10 +34,10 @@ spring:
     mongodb:
       database: audit-documents
       authentication-database: admin
-      host: 192.168.1.100
-      username: shavantha
-      password: Welcome12!@
-      port: 1996
+      host: localhost
+#       username: shavantha
+#       password: Welcome12!@
+      port: 27017
       repositories:
         enabled: true
 
@@ -92,10 +92,10 @@ spring:
     mongodb:
       database: audit-documents
       authentication-database: admin
-      host: 192.168.1.100
-      username: shavantha
-      password: Welcome12!@
-      port: 1996
+      host: localhost
+#       username: shavantha
+#       password: Welcome12!@
+      port: 27017
       repositories:
         enabled: true
 
