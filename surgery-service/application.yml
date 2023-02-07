@@ -1,3 +1,13 @@
+spring:
+    config:
+        activate:
+            on-profile: dev
+name: dev-YAML
+environment: testing
+enabled: true
+server:
+  port: 6500
+
 # server:
 #   port: 6500
 # eureka:
@@ -137,18 +147,7 @@ spring-doc:
 token:
   secret: jguy5675hghgtrljkh
   
-  
-  
-spring:
-    config:
-        activate:
-            on-profile: dev
-name: dev-YAML
-environment: testing
-enabled: true
-server:
-  port: 6500
-
+ 
 ---
 spring:
     config:
