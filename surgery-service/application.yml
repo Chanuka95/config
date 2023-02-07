@@ -1,5 +1,5 @@
 server:
-  port: 4502
+  port: 6500
 # eureka:
 #   client:
 #     serviceUrl:
