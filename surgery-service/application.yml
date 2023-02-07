@@ -4,8 +4,6 @@ server:
 spring:
   profiles:
     include: dev
-    active: 
-      dev
 
 # server:
 #   port: 6500
@@ -154,8 +152,6 @@ server:
 spring:
   profiles:
     include: local
-    active: 
-      @env@
       
 # server:
 #   port: 6500
