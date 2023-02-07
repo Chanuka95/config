@@ -858,8 +858,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/admin_db_production?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-#     username: iihsadmin
-#     password: Welcome12!@
+    username: root
+    password: Welcome12!@
 
 #  ## Multipart config
 #  servlet:
