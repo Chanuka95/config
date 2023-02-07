@@ -1,5 +1,25 @@
+spring:
+    config:
+        activate:
+            on-profile: test
+name: test-YAML
+environment: testing
+enabled: false
+servers: 
+    - www.abc.test.com
+    - www.xyz.test.com
+
+---
+spring:
+    config:
+        activate:
+            on-profile: dev
+name: dev-YAML
+environment: production
+enabled: true
+
 server:
-  port: 4502
+  port: 4500
 # eureka:
 #   client:
 #     serviceUrl:
@@ -136,3 +156,13 @@ spring-doc:
 
 token:
   secret: jguy5675hghgtrljkh
+
+
+
+
+
+
+
+
+
+
