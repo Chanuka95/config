@@ -1,5 +1,5 @@
-server:
-  port: 6500
+# server:
+#   port: 6500
 # eureka:
 #   client:
 #     serviceUrl:
@@ -136,3 +136,27 @@ spring-doc:
 
 token:
   secret: jguy5675hghgtrljkh
+  
+  
+  
+spring:
+    config:
+        activate:
+            on-profile: dev
+name: dev-YAML
+environment: testing
+enabled: true
+server:
+  port: 6500
+
+---
+spring:
+    config:
+        activate:
+            on-profile: local
+name: local-YAML
+environment: production
+enabled: true
+server:
+  port: 7500
+
