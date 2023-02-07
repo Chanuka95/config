@@ -60,10 +60,10 @@ spring:
     mongodb:
       database: appointment_cancellation_config
       authentication-database: admin
-      host: 192.168.1.100
-      port: 1996
-      username: shavantha
-      password: Welcome12!@
+      host: localhost
+      port: 27017
+#       username: shavantha
+#       password: Welcome12!@
 
   #RabbitMq properties
   cloud:
@@ -128,8 +128,8 @@ spring:
   # Connection url for the database
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.1.100:3306/administration_service_db_demo?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: shavantha
+    url: jdbc:mysql://localhost:3306/administration_service_db_demo?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
     password: Welcome12!@
 
 #  ## Multipart config
@@ -303,10 +303,10 @@ spring:
     mongodb:
       database: appointment_cancellation_config
       authentication-database: test
-      host: 192.168.1.101
+      host: localhost
       port: 27017
-      username: iihsqa
-      password: Welcome12!@
+#       username: iihsqa
+#       password: Welcome12!@
 
   #RabbitMq properties
   cloud:
@@ -371,8 +371,8 @@ spring:
   # Connection url for the database
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.1.101/administration_service_db_qa?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: iihsadmin
+    url: jdbc:mysql://localhost/administration_service_db_qa?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
     password: Welcome12!@
 
 #  ## Multipart config
@@ -545,10 +545,10 @@ spring:
     mongodb:
       database: appointment_cancellation_config
       authentication-database: admin
-      host: 150.230.53.109
+      host: localhost
       port: 27017
-      username: shavantha
-      password: Welcome12!@
+#       username: shavantha
+#       password: Welcome12!@
 
   #RabbitMq properties
   cloud:
@@ -613,8 +613,8 @@ spring:
   # Connection url for the database
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://150.230.53.109:3306/administration_service_db_demo?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: shavantha
+    url: jdbc:mysql://localhost:3306/administration_service_db_demo?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
     password: Welcome12!@
 
 #  ## Multipart config
@@ -789,10 +789,10 @@ spring:
     mongodb:
       database: appointment_cancellation_config
       authentication-database: admin
-      host: 10.0.0.82
+      host: localhost
       port: 27017
-      username: iihsqa
-      password: $2a$10$ugIvjW2bCad2W8JSuq5lLOQvgmWBuFekpsHmkp2JdaMwV386L43JO
+#       username: iihsqa
+#       password: $2a$10$ugIvjW2bCad2W8JSuq5lLOQvgmWBuFekpsHmkp2JdaMwV386L43JO
 
   #RabbitMq properties
   cloud:
@@ -857,9 +857,9 @@ spring:
   # Connection url for the database
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://10.0.0.82:3306/admin_db_production?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: iihsadmin
-    password: Welcome12!@
+    url: jdbc:mysql://localhost:3306/admin_db_production?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#     username: iihsadmin
+#     password: Welcome12!@
 
 #  ## Multipart config
 #  servlet:
