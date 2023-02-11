@@ -230,6 +230,8 @@ token:
 
 hospitalGroup:
   dbHospitalGroupId: 146
+  
+message: "Very Good evening"
  
 ---
 
