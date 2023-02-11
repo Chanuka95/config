@@ -23,10 +23,10 @@ server:
 # = DATA SOURCE
 # ===============================
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://192.168.1.100:8761/eureka
+# eureka:
+#   client:
+#     serviceUrl:
+#       defaultZone: http://192.168.1.100:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${instance-id:${random.value}}
 
@@ -57,10 +57,10 @@ spring:
     mongodb:
       database: appointment_cancellation_config
       authentication-database: admin
-      host: 192.168.1.100
-      port: 1996
-      username: shavantha
-      password: Welcome12!@
+      host: localhost
+      port: 27017
+#       username: shavantha
+#       password: Welcome12!@
 
   #RabbitMq properties
   cloud:
@@ -117,7 +117,7 @@ spring:
           environment:
             spring:
               rabbitmq:
-                host: 192.168.1.100
+                host: localhost
                 port: 5672
                 username: guest
                 password: guest
@@ -125,8 +125,8 @@ spring:
   # Connection url for the database
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.1.100:3306/administration_service_db_demo?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: shavantha
+    url: jdbc:mysql://localhost:3306/administration_service_db_demo?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
     password: Welcome12!@
 
 #  ## Multipart config
