@@ -1,4 +1,3 @@
-
 ---
 
 spring.profiles: dev 
@@ -24,10 +23,10 @@ server:
 # = DATA SOURCE
 # ===============================
 
-# eureka:
-#   client:
-#     serviceUrl:
-#       defaultZone: http://192.168.1.100:8761/eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.100:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${instance-id:${random.value}}
 
@@ -58,10 +57,10 @@ spring:
     mongodb:
       database: appointment_cancellation_config
       authentication-database: admin
-      host: localhost
-      port: 27017
-      # username: shavantha
-      # password: Welcome12!@
+      host: 192.168.1.100
+      port: 1996
+      username: shavantha
+      password: Welcome12!@
 
   #RabbitMq properties
   cloud:
@@ -118,7 +117,7 @@ spring:
           environment:
             spring:
               rabbitmq:
-                host: localhost
+                host: 192.168.1.100
                 port: 5672
                 username: guest
                 password: guest
@@ -126,8 +125,8 @@ spring:
   # Connection url for the database
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/administration_service_db_demo?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: root
+    url: jdbc:mysql://192.168.1.100:3306/administration_service_db_demo?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: shavantha
     password: Welcome12!@
 
 #  ## Multipart config
@@ -231,19 +230,16 @@ token:
 
 hospitalGroup:
   dbHospitalGroupId: 146
-
-message: "Very Good evening"
-
+ 
 ---
 
-spring.profiles: qa
-
+spring.profiles: qa 
 # ----------------------------------------
 # WEB PROPERTIES
 # ----------------------------------------
 # Pass as command line argument; If not assigned value 0.
 server:
-  port: 0
+  port: 8600
 #server.port=${PORT}
 
 # ===============================
@@ -260,10 +256,10 @@ server:
 # = DATA SOURCE
 # ===============================
 
-# eureka:
-#   client:
-#     serviceUrl:
-#       defaultZone: http://192.168.1.101:8761/eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.100:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${instance-id:${random.value}}
 
@@ -279,12 +275,7 @@ spring:
     restart:
       enabled: true
   zipkin:
-    base-url: http://192.168.1.101:9411
-    sender:
-      type:web
-  sleuth:
-    sampler:
-      probability: 1
+    base-url: http://192.168.1.100:9411
   jpa:
     hibernate:
       ddl-auto: none
@@ -298,10 +289,10 @@ spring:
   data:
     mongodb:
       database: appointment_cancellation_config
-      authentication-database: test
-      host: 192.168.1.101
-      port: 27017
-      username: iihsqa
+      authentication-database: admin
+      host: 192.168.1.100
+      port: 1996
+      username: shavantha
       password: Welcome12!@
 
   #RabbitMq properties
@@ -359,7 +350,7 @@ spring:
           environment:
             spring:
               rabbitmq:
-                host: 192.168.1.101
+                host: 192.168.1.100
                 port: 5672
                 username: guest
                 password: guest
@@ -367,8 +358,8 @@ spring:
   # Connection url for the database
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.1.101/administration_service_db_qa?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: iihsadmin
+    url: jdbc:mysql://192.168.1.100:3306/administration_service_db_demo?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: shavantha
     password: Welcome12!@
 
 #  ## Multipart config
@@ -393,8 +384,7 @@ logging:
           autoconfigure: ERROR
   # LOGGING
   file:
-    name: /home/iihsolutions/logfiles/admin-service.log
-
+    name: /home/iihsadmin@123/images
 resilience4j:
   circuitbreaker:
     instances:
@@ -461,246 +451,6 @@ file:
 room-lock:
   duration: 3600
 
-#application-description: @project.description@
-#application-version: @project.version@
-spring-doc:
-  version: 1.0
-
-
-token:
-  secret: jguy5675hghgtrljkh
-
-hospitalGroup:
-  dbHospitalGroupId: 138
-
----
-
-spring.profiles: demo
-
-# ----------------------------------------
-# WEB PROPERTIES
-# ----------------------------------------
-# Pass as command line argument; If not assigned value 0.
-server:
-  port: 0
-#server.port=${PORT}
-
-# ===============================
-# = EUREKA DISCOVERY SERVER SETTINGS
-# ===============================
-
-#spring.application.name=usermgt-service
-#eureka.client.serviceUrl.defaultZone =http://localhost:8010/eureka
-#spring.devtools.restart.enabled=true
-#eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${random.value}}
-#eureka.instance.instance-id=${spring.application.name}:${random.int}
-
-# ===============================
-# = DATA SOURCE
-# ===============================
-
-# eureka:
-#   client:
-#     serviceUrl:
-#       defaultZone: http://150.230.53.109:8761/eureka
-  instance:
-    instance-id: ${spring.application.name}:${instance-id:${random.value}}
-
-#spring.jpa.hibernate.ddl-auto=create none update create create-drop
-spring:
-  # ===============================
-  # = JPA / HIBERNATE
-  # ===============================
-
-  application:
-    name: admin-service
-  devtools:
-    restart:
-      enabled: true
-  zipkin:
-    base-url: http://150.230.53.109:9411
-    sender:
-      type:web
-  sleuth:
-    sampler:
-      probability: 1
-  jpa:
-    hibernate:
-      ddl-auto: none
-    # Show or not log for each sql query
-    show-sql: false
-    # Allows Hibernate to generate SQL optimized for a particular DBMS
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
-
-  data:
-    mongodb:
-      database: appointment_cancellation_config
-      authentication-database: admin
-      host: 150.230.53.109
-      port: 27017
-      username: shavantha
-      password: Welcome12!@
-
-  #RabbitMq properties
-  cloud:
-    stream:
-      bindings:
-        clinicInput:
-          destination: clinicInformationExchange
-          group: clinicInformationQ
-          binder: rabbit1
-        specialityInput:
-          destination: specialityInformationExchange
-          group: specialityInformationQ
-          binder: rabbit1
-        deleteClinicInput:
-          destination: clinicDeleteInformationExchange
-          group: clinicDeleteInformationQ
-          binder: rabbit1
-        doctorNameUpdateInput:
-          destination: doctorNameInformationExchange
-          group: doctorNameInformationQ
-          binder: rabbit1
-        outputRoomCategoryUpdateEvent:
-          destination: outputRoomCategoryUpdateEvent-exchange
-          binder: rabbit1
-        outputRoomFacilityUpdateEvent:
-          destination: outputRoomFacilityUpdateEvent-exchange
-          binder: rabbit1
-        rotaLocationUpdateOut:
-          destination: rota-location-exchange
-          binder: rabbit1
-        outputHospitalEvent:
-          destination: hospitalEventExchange
-          binder: rabbit1
-        unitAllocationInput:
-          destination: unit-allocation-exchange
-          group: unit-allocationQ
-          binder: rabbit1
-        hosStructureInput:
-          destination: hosStructureExchange
-          group: hosStructureQ
-          binder: rabbit1
-        hosStructureOut:
-          destination: hosStructureExchange
-          binder: rabbit1
-        DepartmentCreatedOut:
-          destination: departmentCreatedExchange
-          binder: rabbit1
-        outputTheatreEvent:
-          destination: theatreEventExchange
-          binder: rabbit1
-      binders:
-        rabbit1:
-          type: rabbit
-          environment:
-            spring:
-              rabbitmq:
-                host: 150.230.53.109
-                port: 5672
-                username: guest
-                password: guest
-
-  # Connection url for the database
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://150.230.53.109:3306/administration_service_db_demo?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: shavantha
-    password: Welcome12!@
-
-#  ## Multipart config
-#  servlet:
-#    multipart:
-#      enabled: true
-#      file-size-threshold: 2KB
-#      max-file-size: 200MB
-#      max-request-size: 215MB
-
-
-
-
-logging:
-  level:
-    org:
-      springframework:
-        cloud:
-          stream: debug
-
-        boot:
-          autoconfigure: ERROR
-  # LOGGING
-  file:
-
-    name: /home/iihsolutions/logfiles/admin-service.log
-
-resilience4j:
-  circuitbreaker:
-    instances:
-      userMgtService:
-        sliding-window-size: 10
-        failure-rate-threshold: 50
-        wait-duration-in-open-state: 30000
-        automatic-transition-from-open-to-half-open-enabled: true
-        permitted-number-of-calls-in-half-open-state: 5
-        allow-health-indicator-to-fail: true
-        register-health-indicator: true
-management:
-  health:
-    circuitbreakers:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include:
-          - health
-  endpoint:
-    health:
-      show-details: always
-
-file:
-  upload:
-#    room: /home/ec2-user/rooms
-    room: /home/opc/rooms/
-    hall: /home/opc/halls/
-
-
-# ===============================
-# = API GAteway Properties
-# ===============================
-
-#gateway:
-#  ipaddress: 192.168.8.180
-#token:
-#  expiration_time: 86400000
-#  secret: jguy5675hghgtrljkh
-#login:
-#  url:
-#    path: /authnticate
-
-# ===============================
-# = Actuator Health Properties..
-# ===============================
-
-#management:
-#  endpoint:
-#    health:
-#      probes:
-#        enabled: true
-#      show-details: always
-#      group:
-#        readiness:
-#          include: *
-#          show-details: always
-#
-#        liveness:
-#          include: ping
-#          show-details: always
-
-room-lock:
-  duration: 3600
-
 
 #application-description: @project.description@
 #application-version: @project.version@
@@ -712,243 +462,4 @@ token:
   secret: jguy5675hghgtrljkh
 
 hospitalGroup:
-  dbHospitalGroupId: 1
-
----
-
-spring.profiles: uat
-
-# ----------------------------------------
-# WEB PROPERTIES
-# ----------------------------------------
-# Pass as command line argument; If not assigned value 0.
-server:
-  port: 0
-#server.port=${PORT}
-
-# ===============================
-# = EUREKA DISCOVERY SERVER SETTINGS
-# ===============================
-
-#spring.application.name=usermgt-service
-#eureka.client.serviceUrl.defaultZone =http://localhost:8010/eureka
-#spring.devtools.restart.enabled=true
-#eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${random.value}}
-#eureka.instance.instance-id=${spring.application.name}:${random.int}
-
-# ===============================
-# = DATA SOURCE
-# ===============================
-
-# eureka:
-#   client:
-#     serviceUrl:
-#       defaultZone: http://193.122.79.57:8761/eureka
-  instance:
-    instance-id: ${spring.application.name}:${instance-id:${random.value}}
-
-#spring.jpa.hibernate.ddl-auto=create none update create create-drop
-spring:
-  # ===============================
-  # = JPA / HIBERNATE
-  # ===============================
-
-  application:
-    name: admin-service
-  devtools:
-    restart:
-      enabled: true
-  zipkin:
-    base-url: http://193.122.79.57:9411
-    sender:
-      type:web
-  sleuth:
-    sampler:
-      probability: 1
-  jpa:
-    hibernate:
-      ddl-auto: none
-    # Show or not log for each sql query
-    show-sql: false
-    # Allows Hibernate to generate SQL optimized for a particular DBMS
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
-
-  data:
-    mongodb:
-      database: appointment_cancellation_config
-      authentication-database: admin
-      host: 10.0.0.82
-      port: 27017
-      username: iihsqa
-      password: $2a$10$ugIvjW2bCad2W8JSuq5lLOQvgmWBuFekpsHmkp2JdaMwV386L43JO
-
-  #RabbitMq properties
-  cloud:
-    stream:
-      bindings:
-        clinicInput:
-          destination: clinicInformationExchange
-          group: clinicInformationQ
-          binder: rabbit1
-        specialityInput:
-          destination: specialityInformationExchange
-          group: specialityInformationQ
-          binder: rabbit1
-        deleteClinicInput:
-          destination: clinicDeleteInformationExchange
-          group: clinicDeleteInformationQ
-          binder: rabbit1
-        doctorNameUpdateInput:
-          destination: doctorNameInformationExchange
-          group: doctorNameInformationQ
-          binder: rabbit1
-        outputRoomCategoryUpdateEvent:
-          destination: outputRoomCategoryUpdateEvent-exchange
-          binder: rabbit1
-        outputRoomFacilityUpdateEvent:
-          destination: outputRoomFacilityUpdateEvent-exchange
-          binder: rabbit1
-        rotaLocationUpdateOut:
-          destination: rota-location-exchange
-          binder: rabbit1
-        outputHospitalEvent:
-          destination: hospitalEventExchange
-          binder: rabbit1
-        unitAllocationInput:
-          destination: unit-allocation-exchange
-          group: unit-allocationQ
-          binder: rabbit1
-        hosStructureInput:
-          destination: hosStructureExchange
-          group: hosStructureQ
-          binder: rabbit1
-        hosStructureOut:
-          destination: hosStructureExchange
-          binder: rabbit1
-        DepartmentCreatedOut:
-          destination: departmentCreatedExchange
-          binder: rabbit1
-        outputTheatreEvent:
-          destination: theatreEventExchange
-          binder: rabbit1
-      binders:
-        rabbit1:
-          type: rabbit
-          environment:
-            spring:
-              rabbitmq:
-                host: 10.0.0.82
-                port: 5672
-                username: guest
-                password: guest
-
-  # Connection url for the database
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://10.0.0.82:3306/admin_db_production?useUnicode=true&characterEncoding=utf8&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: iihsadmin
-    password: Welcome12!@
-
-#  ## Multipart config
-#  servlet:
-#    multipart:
-#      enabled: true
-#      file-size-threshold: 2KB
-#      max-file-size: 200MB
-#      max-request-size: 215MB
-
-
-
-
-logging:
-  level:
-    org:
-      springframework:
-        cloud:
-          stream: debug
-
-        boot:
-          autoconfigure: ERROR
-  # LOGGING
-  file:
-    name: /home/opc/logfiles/admin-service.log
-
-resilience4j:
-  circuitbreaker:
-    instances:
-      userMgtService:
-        sliding-window-size: 10
-        failure-rate-threshold: 50
-        wait-duration-in-open-state: 30000
-        automatic-transition-from-open-to-half-open-enabled: true
-        permitted-number-of-calls-in-half-open-state: 5
-        allow-health-indicator-to-fail: true
-        register-health-indicator: true
-management:
-  health:
-    circuitbreakers:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include:
-          - health
-  endpoint:
-    health:
-      show-details: always
-
-file:
-  upload:
-#    room: /home/ec2-user/rooms
-    room: /home/opc/rooms/
-    hall: /home/opc/halls/
-   
-
-# ===============================
-# = API GAteway Properties
-# ===============================
-
-#gateway:
-#  ipaddress: 192.168.8.180
-#token:
-#  expiration_time: 86400000
-#  secret: jguy5675hghgtrljkh
-#login:
-#  url:
-#    path: /authnticate
-
-# ===============================
-# = Actuator Health Properties..
-# ===============================
-
-#management:
-#  endpoint:
-#    health:
-#      probes:
-#        enabled: true
-#      show-details: always
-#      group:
-#        readiness:
-#          include: *
-#          show-details: always
-#
-#        liveness:
-#          include: ping
-#          show-details: always
-
-room-lock:
-  duration: 3600
-
-#application-description: @project.description@
-#application-version: @project.version@
-spring-doc:
-  version: 1.0
-
-
-token:
-  secret: jguy5675hghgtrljkh
-
-hospitalGroup:
-  dbHospitalGroupId: 1
+  dbHospitalGroupId: 146
