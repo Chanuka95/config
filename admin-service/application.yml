@@ -158,7 +158,7 @@ resilience4j:
       userMgtService:
         sliding-window-size: 10
         failure-rate-threshold: 50
-        wait-duration-in-open-state: 30000
+#         wait-duration-in-open-state: 30000
         automatic-transition-from-open-to-half-open-enabled: true
         permitted-number-of-calls-in-half-open-state: 5
         allow-health-indicator-to-fail: true
@@ -216,7 +216,7 @@ file:
 #          show-details: always
 
 room-lock:
-  duration: 3600
+#   duration: 3600
 
 
 #application-description: @project.description@
