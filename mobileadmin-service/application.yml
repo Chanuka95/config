@@ -21,9 +21,9 @@ spring:
     hikari:
       connectionTimeout: 20000
       maximumPoolSize: 5
-    username: shavantha
+    username: root
     password: Welcome12!@
-    url: jdbc:mysql://192.168.1.100:3306/administration_service_db_demo
+    url: jdbc:mysql://localhost:3306/administration_service_db_demo
 #    192.168.1.100
 
     binders:
@@ -42,9 +42,9 @@ spring:
       database: audit-documents
       authentication-database: admin
       host: 192.168.1.100
-      port: 1996
-      username: shavantha
-      password: Welcome12!@
+      port: 27017
+#       username: shavantha
+#       password: Welcome12!@
 
       repositories:
         enabled: true # Enable Mongo repositories.
