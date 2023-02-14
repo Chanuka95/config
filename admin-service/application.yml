@@ -233,7 +233,7 @@ token:
 hospitalGroup:
   dbHospitalGroupId: 146
   
-message: "dev bus bus updated admin message from yml" 
+message: "admin message from yml" 
 
 --- 
  
