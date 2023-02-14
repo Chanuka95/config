@@ -232,7 +232,7 @@ token:
 hospitalGroup:
   dbHospitalGroupId: 146
   
-message: "dev admin messge from yml" 
+message: "dev updated admin message from yml" 
 
 --- 
  
