@@ -233,7 +233,7 @@ token:
 hospitalGroup:
   dbHospitalGroupId: 146
   
-message: "admin new" 
+message: "admin" 
 
 --- 
  
