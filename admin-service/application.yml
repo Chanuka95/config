@@ -233,7 +233,7 @@ token:
 hospitalGroup:
   dbHospitalGroupId: 146
   
-message: "admin message from yml" 
+message: "admin" 
 
 --- 
  
@@ -470,5 +470,5 @@ token:
 hospitalGroup:
   dbHospitalGroupId: 146
   
-message: "qa admin messge from yml" 
+message: "admin" 
 
