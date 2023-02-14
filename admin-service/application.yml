@@ -409,6 +409,8 @@ management:
       exposure:
         include:
           - health
+          - refresh
+          - bus-refresh
   endpoint:
     health:
       show-details: always
