@@ -172,6 +172,7 @@ management:
       exposure:
         include:
           - health
+          - refresh
   endpoint:
     health:
       show-details: always
