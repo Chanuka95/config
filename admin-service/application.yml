@@ -5,8 +5,8 @@ spring.profiles: dev
 # WEB PROPERTIES
 # ----------------------------------------
 # Pass as command line argument; If not assigned value 0.
-# server:
-#   port: 4501
+server:
+  port: 4501
 #server.port=${PORT}
 
 # ===============================
