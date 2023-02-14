@@ -121,6 +121,11 @@ spring:
                 port: 5672
                 username: guest
                 password: guest
+              cloud:
+                bus:
+                  enabled: true
+                  refresh:
+                    enabled: true   
 
   # Connection url for the database
   datasource:
@@ -358,7 +363,11 @@ spring:
                 port: 5672
                 username: guest
                 password: guest
-
+              cloud:
+                bus:
+                  enabled: true
+                  refresh:
+                    enabled: true
   # Connection url for the database
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
