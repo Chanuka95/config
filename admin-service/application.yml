@@ -121,11 +121,11 @@ spring:
                 port: 5672
                 username: guest
                 password: guest
-              cloud:
-                bus:
-                  enabled: true
-                  refresh:
-                    enabled: true   
+#               cloud:
+#                 bus:
+#                   enabled: true
+#                   refresh:
+#                     enabled: true   
 
   # Connection url for the database
   datasource:
@@ -175,10 +175,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
-#           - health
-#           - refresh
-#           - busrefresh
+        include: 
+          - health
+          - refresh
+          - busrefresh
   endpoint:
     health:
       show-details: always
