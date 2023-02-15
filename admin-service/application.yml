@@ -173,12 +173,13 @@ management:
   health:
     circuitbreakers:
       enabled: true
-#   endpoints:
-#     web:
-#       exposure:
-#         include: 
-#           - health
-#           - busrefresh
+  endpoints:
+    web:
+      exposure:
+        include: 
+          - health
+          - refresh
+          - busrefresh
           
   endpoint:
     health:
