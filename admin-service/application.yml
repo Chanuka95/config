@@ -177,10 +177,7 @@ management:
       exposure:
         include: 
           - health
-          - refresh
-#           - busrefresh
-          - bus-refresh
-          - bus-env
+          - busrefresh
   endpoint:
     health:
       show-details: always
