@@ -178,7 +178,9 @@ management:
         include: 
           - health
           - refresh
-          - busrefresh
+#           - busrefresh
+          - bus-refresh
+          - bus-env
   endpoint:
     health:
       show-details: always
