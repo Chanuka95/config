@@ -175,10 +175,10 @@ management:
   endpoints:
     web:
       exposure:
-        include:
-          - health
-          - refresh
-          - busrefresh
+        include: "*"
+#           - health
+#           - refresh
+#           - busrefresh
   endpoint:
     health:
       show-details: always
