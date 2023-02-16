@@ -6,7 +6,7 @@ spring.profiles: dev
 # ----------------------------------------
 # Pass as command line argument; If not assigned value 0.
 server:
-  port: 4755
+  port: 4756
   
 #server.port=${PORT}
 
