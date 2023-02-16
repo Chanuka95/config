@@ -179,7 +179,7 @@ management:
         include: 
           - health
           - refresh
-          - bus-refresh
+          - busrefresh
           
   endpoint:
     health:
